@@ -61,7 +61,7 @@ const HomePage = () => {
       
       {isAuthenticated && (
         <Typography variant="subtitle1" gutterBottom>
-          Welcome, {user.username}!
+          Welcome,
         </Typography>
       )}
       

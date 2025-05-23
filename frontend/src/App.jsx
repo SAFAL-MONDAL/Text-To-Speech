@@ -4,11 +4,12 @@ import DashboardPage from './pages/DashboardPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import NavBar from './components/NavBar';
+import HomePage from './pages/HomePage';  
 import { Box } from '@mui/material';
 
 const PrivateRoute = ({ children }) => {
   const { isAuthenticated } = useAuth();
-  return isAuthenticated ? children : <Navigate to="/login" />;
+  return isAuthenticated ? children : <Navigate to="/HomePage" />;
 };
 
 const App = () => {
@@ -18,7 +19,8 @@ const App = () => {
         <NavBar />
         <Box sx={{ pt: 8 }}>
           <Routes>
-            <Route path="/" element={<Navigate to="/signup" />} />
+            <Route path="/" element={<Navigate to="/HomePage" />} />
+            <Route path="/HomePage" element={<HomePage />} /> 
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route 
